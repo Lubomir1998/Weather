@@ -8,10 +8,21 @@
     android:background="@drawable/gradient"
     tools:context=".MainActivity">
 
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        >
+
     <RelativeLayout
         android:id="@+id/mainContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:visibility="visible">
 
     <LinearLayout
@@ -96,7 +107,7 @@
                     <ImageView
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:tint="#fff"
+                        app:tint="#fff"
                         android:src="@drawable/sunrise"
                         />
 
@@ -136,7 +147,7 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:src="@drawable/sunset"
-                        android:tint="#fff"
+                        app:tint="#fff"
                         />
 
                     <TextView
@@ -174,7 +185,7 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:src="@drawable/wind"
-                        android:tint="#fff"
+                        app:tint="#fff"
                         />
 
                     <TextView
@@ -225,7 +236,7 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:src="@drawable/pressure"
-                        android:tint="#fff"
+                        app:tint="#fff"
                         />
 
                     <TextView
@@ -264,7 +275,7 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:src="@drawable/humidity"
-                        android:tint="#fff"
+                        app:tint="#fff"
                         />
 
                     <TextView
@@ -303,7 +314,7 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:src="@drawable/info"
-                        android:tint="#fff"
+                        app:tint="#fff"
                         />
 
                     <TextView
@@ -335,6 +346,10 @@
 
     </RelativeLayout>
 
+    </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
     <ProgressBar
         android:id="@+id/loader"
         android:layout_width="wrap_content"
@@ -350,5 +365,8 @@
         android:visibility="gone"
         android:textColor="#fff"
         android:text="Something went wrong"/>
+
+
+
 
 </RelativeLayout>

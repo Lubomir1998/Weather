@@ -50,7 +50,10 @@ class MainActivity : AppCompatActivity() {
 
         getLastLocation()
 
-       // WeatherTask().execute()
+       binding.swipeRefresh.setOnRefreshListener {
+           getLastLocation()
+           binding.swipeRefresh.isRefreshing = false
+       }
 
     }
 
